@@ -53,7 +53,13 @@ def row_to_dict(cursor, row):
     return d
 
 # app.py mein yeh naya function add karein
+# app.py mein add karein
 
+# HEALTH CHECK ROUTE: UptimeRobot jaise services ke liye
+@app.route('/')
+def health_check():
+    return "OK", 200
+    
 # SECRET ENDPOINT: Sirf ek baar database initialize karne ke liye
 @app.route('/create-tables-on-render-once')
 def create_tables():
