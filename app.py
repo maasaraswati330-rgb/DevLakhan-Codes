@@ -52,6 +52,18 @@ def row_to_dict(cursor, row):
         d[col[0]] = row[idx]
     return d
 
+# app.py mein yeh naya function add karein
+
+# SECRET ENDPOINT: Sirf ek baar database initialize karne ke liye
+@app.route('/create-tables-on-render-once')
+def create_tables():
+    try:
+        init_db()
+        return "Database tables created successfully!"
+    except Exception as e:
+        return f"An error occurred: {e}"
+        
+
 # === PUBLIC API ===
 @app.route('/api/snippets', methods=['GET'])
 def get_all_snippets():
